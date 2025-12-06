@@ -3,10 +3,6 @@ html, body {
   overflow-x: hidden !important;
 }
 
-#mobileMenu {
-  transform: translateX(110%);
-}
-
 [data-aos] {
   overflow-x: hidden !important;
 }
