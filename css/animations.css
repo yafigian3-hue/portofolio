@@ -4,7 +4,7 @@ html, body {
 }
 
 #mobileMenu {
-  transform: translateX(110%) !important;
+  transform: translateX(110%);
 }
 
 [data-aos] {
