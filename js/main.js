@@ -145,3 +145,51 @@ document.addEventListener("DOMContentLoaded", () => {
     obs2.observe(whyTitle);
   }
 });
+
+const descriptions = document.querySelectorAll("#projects p[data-desc]");
+
+descriptions.forEach((desc) => {
+  const fullText = desc.textContent.trim();
+  const words = fullText.split(" ");
+  const limit = 10;
+
+  if (words.length > limit) {
+    const shortText = words.slice(0, limit).join(" ") + "...";
+
+    // Buat wrapper agar text dan tombol berada dalam satu baris
+    const wrapper = document.createElement("div");
+    wrapper.className = "flex items-center gap-2 flex-wrap";
+
+    // Buat elemen teks
+    const textEl = document.createElement("span");
+    textEl.textContent = shortText;
+    textEl.className = "text-gray-600 dark:text-gray-300";
+
+    // Buat tombol Read More
+    const btn = document.createElement("button");
+    btn.innerHTML = "Read More &raquo;";
+
+    btn.className =
+      "text-blue-600 dark:text-blue-400 font-semibold hover:underline";
+    btn.style.cursor = "pointer";
+
+    // Bersihkan isi <p> lama
+    desc.innerHTML = "";
+    desc.appendChild(wrapper);
+
+    // Masukkan text + tombol ke wrapper
+    wrapper.appendChild(textEl);
+    wrapper.appendChild(btn);
+
+    // Event toggle
+    btn.addEventListener("click", () => {
+      if (btn.innerHTML.includes("Read More")) {
+        textEl.textContent = fullText;
+        btn.innerHTML = "Read Less &laquo;";
+      } else {
+        textEl.textContent = shortText;
+        btn.innerHTML = "Read More &raquo;";
+      }
+    });
+  }
+});
