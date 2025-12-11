@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (typingAbout2 && whyTitle) {
     const text2 =
-      "Saya bukan developer senior. Tapi saya punya kelebihan yang jarang dimiliki pemula: respon cepat, mau revisi tanpa ribet, fokus pada detail tampilan, dan pengerjaan micro-job yang rapi & tepat waktu.";
+      "Saya bukan developer senior, tapi saya punya kelebihan yang jarang dimiliki pemula: komunikasi responsif, mau revisi tanpa ribet, fokus pada detail tampilan, dan pengerjaan micro-job yang rapi & tepat waktu (sesuai deadline).";
 
     let hasTyped = false;
 
